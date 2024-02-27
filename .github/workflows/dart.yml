@@ -15,8 +15,7 @@ jobs:
           channel: 'stable'
 
       - name: install dependencies
-        run: cd ./app/
-        run: flutter pub get
+        run: cd ./app/ && flutter pub get
 
       - name: Run tests
         run: flutter test
