@@ -15,7 +15,10 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sudo chown -R vscode /flutter/.pub-cache/"
+	"postCreateCommand": {
+		"pub-cache own": "sudo chown -R vscode /flutter/.pub-cache/",
+		"bin own": "sudo chown -R vscode /flutter/bin/cache/flutter_version_check.stamp"
+	}
 
 	// Configure tool-specific properties.
 	// "customizations": {},
