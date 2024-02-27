@@ -15,7 +15,7 @@ jobs:
           channel: 'stable'
 
       - name: Navigate to app directory
-        run: cd ./app
+        run: cd ./app/
 
       - name: install dependencies
         run: flutter pub get
