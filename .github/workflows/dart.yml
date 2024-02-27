@@ -15,10 +15,13 @@ jobs:
           channel: 'stable'
 
       - name: install dependencies
-        run: cd ./app/ && flutter pub get
+        working-directory: ./app
+        run: flutter pub get
 
       - name: Run tests
+        working-directory: ./app
         run: flutter test
 
       - name: Build flutter web
+        working-directory: ./app
         run: flutter build web
