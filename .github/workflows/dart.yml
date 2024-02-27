@@ -14,10 +14,8 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Navigate to app directory
-        run: cd ./app/
-
       - name: install dependencies
+        run: cd ./app/
         run: flutter pub get
 
       - name: Run tests
