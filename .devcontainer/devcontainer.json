@@ -19,6 +19,10 @@
 		"pub-cache own": "sudo chown -R vscode /flutter/.pub-cache/",
 		"bin own": "sudo chown -R vscode /flutter/bin/cache/flutter_version_check.stamp"
 	}
+	//"postCreateCommand": {
+	//	"audio executable": "sudo chmod +x /flutter/.pub-cache/hosted-hashes/pub.dev/audioplayers_web-4.1.0.sha256",
+	//	"lints executable": "sudo chmod +x /flutter/.pub-cache/hosted-hashes/pub.dev/flutter_lints-3.0.1.sha256"
+	//}
 
 	// Configure tool-specific properties.
 	// "customizations": {},
