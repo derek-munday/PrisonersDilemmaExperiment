@@ -25,3 +25,13 @@ jobs:
       - name: Build flutter web
         working-directory: ./app
         run: flutter build web
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git checkout -b gh-pages
+          mv app/build/web/* .
+          git add .
+          git commit -m "Deploy Flutter Web"
+          git push origin gh-pages
