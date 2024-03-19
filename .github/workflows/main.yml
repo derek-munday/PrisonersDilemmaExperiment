@@ -28,5 +28,4 @@ jobs:
 
       
       - name: Deploy
-        working-directory: ./.github/workflows
-        uses: ./deploy-phase.yml
+        uses: ./.github/workflows/deploy-phase.yml
