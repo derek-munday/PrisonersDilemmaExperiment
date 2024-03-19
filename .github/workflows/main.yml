@@ -7,25 +7,29 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
-        with:
-          channel: 'stable'
+      #- uses: actions/checkout@v4
+      #- uses: subosito/flutter-action@v2
+      #  with:
+      #    channel: 'stable'
+#
+      #- name: install app dependencies
+      #  working-directory: ./app
+      #  run: flutter pub get
+#
+      #- name: Run tests
+      #  working-directory: ./app
+      #  run: flutter test
+#
+      #- name: Build flutter web
+      #  working-directory: ./app
+      #  run: flutter build web
 
-      - name: install app dependencies
-        working-directory: ./app
-        run: flutter pub get
-
-      - name: Run tests
-        working-directory: ./app
-        run: flutter test
-
-      - name: Build flutter web
-        working-directory: ./app
-        run: flutter build web
-
-      
-      - name: Deploy
-        uses: ./.github/workflows/deploy-phase.yml
+      - name: Build Web
+        uses: ./.github/workflows/build-phase.yml
+      #- name: Deploy
+      #  uses: ./.github/workflows/deploy-phase.yml
