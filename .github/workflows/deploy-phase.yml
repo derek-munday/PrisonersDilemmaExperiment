@@ -6,6 +6,7 @@ on:
 jobs:
   deploy:
     steps:
+      run: pwd
       - name: Web Deploy
         working-directory: ./.github/workflow
         uses: peaceiris/actions-gh-pages@v3
