@@ -10,7 +10,7 @@ jobs:
     uses: actions/checkout@v4
 
   Build_Phase:
-    needs: Setup_Runner
-    uses: .github/workflows/build_phase.yml
+    #needs: Setup_Runner
+    uses: ./.github/workflows/build_phase.yml
     with:
       app_dir: ./app
