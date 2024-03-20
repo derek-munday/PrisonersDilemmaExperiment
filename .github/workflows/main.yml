@@ -11,6 +11,6 @@ jobs:
 
   Build_Phase:
     needs: Setup_Runner
-    uses: ./.github/workflows/build_phase.yml
+    uses: .github/workflows/build_phase.yml
     with:
       app_dir: ./app
