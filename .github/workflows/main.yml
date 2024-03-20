@@ -5,14 +5,9 @@ on:
     branches: [ "main" ]
 
 jobs:
-  CICD_Pipeline:
+  Setup_Runner:
     runs-on: ubuntu-latest
-    # defaults:
-    #   run:
-    #     working-directory: ./app
-
-    steps:
-      - uses: actions/checkout@v4
+    uses: actions/checkout@v4
 
       #- name: install app dependencies
       #  working-directory: ./app
@@ -25,13 +20,8 @@ jobs:
       #- name: Build flutter web
       #  working-directory: ./app
       #  run: flutter build web
-
-      - name: Find Working Directory
-        run: |
-          pwd
-          ls -a
-      - name: Build Web
-        uses: ./.github/workflows/build_phase.yml
+  Build_Phase:
+      uses: ./.github/workflows/build_phase.yml
         with:
           app_dir: ./app
       #- name: Deploy
