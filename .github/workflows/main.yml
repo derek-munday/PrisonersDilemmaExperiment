@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  CICD Pipeline:
+  CICD_Pipeline:
     runs-on: ubuntu-latest
     # defaults:
     #   run:
