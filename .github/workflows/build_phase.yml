@@ -16,7 +16,7 @@ jobs:
         working-directory: ${{ inputs.app_dir }}
     
     steps:
-      - uses: actions/checkout@v4
+      #- uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'

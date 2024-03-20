@@ -9,9 +9,7 @@ jobs:
     name: Flutter CI/CD Pipeline
     runs-on: ubuntu-latest
     steps:
-      #- name: Setup Runner
-      #  uses: actions/checkout@v4
-      - name: Build Phase
-        uses: ./.github/workflows/build_phase.yml
+      - uses: actions/checkout@v4
+      - uses: ./.github/workflows/build_phase.yml
         with:
           app_dir: ./app
