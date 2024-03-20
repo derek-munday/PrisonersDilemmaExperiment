@@ -30,7 +30,11 @@ jobs:
       #  run: flutter build web
 
       - name: Find Working Directory
-        run: pwd
+        run: |
+          pwd
+          ls
+          cd app
+          ls
       - name: Build Web
         uses: ./.github/workflows/build-phase.yml
         with:
