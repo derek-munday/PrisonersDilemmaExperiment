@@ -5,12 +5,9 @@ on:
     branches: [ "main" ]
 
 jobs:
-  Setup_Runner:
+  Build_Phase:
     runs-on: ubuntu-latest
     uses: actions/checkout@v4
-
-  Build_Phase:
-    #needs: Setup_Runner
     uses: ./.github/workflows/build_phase.yml
     with:
       app_dir: ./app
