@@ -21,8 +21,8 @@ jobs:
       #  working-directory: ./app
       #  run: flutter build web
   Build_Phase:
-      uses: ./.github/workflows/build_phase.yml
-        with:
-          app_dir: ./app
+    uses: ./.github/workflows/build_phase.yml
+      with:
+        app_dir: ./app
       #- name: Deploy
       #  uses: ./.github/workflows/deploy-phase.yml
