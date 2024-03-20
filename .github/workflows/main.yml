@@ -7,7 +7,7 @@ on:
 jobs:
   Build_Phase:
     runs-on: ubuntu-latest
-    uses: actions/checkout@v4
-    uses: ./.github/workflows/build_phase.yml
-    with:
-      app_dir: ./app
+    - uses: actions/checkout@v4
+    - uses: ./.github/workflows/build_phase.yml
+      with:
+        app_dir: ./app
