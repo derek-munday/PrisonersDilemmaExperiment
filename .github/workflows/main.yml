@@ -5,9 +5,12 @@ on:
     branches: [ "main" ]
 
 jobs:
-  Build_Phase:
+  Pipeline:
+    name: Flutter CI/CD Pipeline
     runs-on: ubuntu-latest
-    - uses: actions/checkout@v4
-    - uses: ./.github/workflows/build_phase.yml
-      with:
-        app_dir: ./app
+    steps:
+      - name: Build Phase
+        uses: actions/checkout@v4
+        uses: ./.github/workflows/build_phase.yml
+        with:
+          app_dir: ./app
