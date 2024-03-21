@@ -10,6 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/build-web
+      - uses: subosito/flutter-action@v2
         with:
-          app_dir: ./app
+          channel: 'stable'
+      - name: Install App Dependencies
+        run: flutter pub get
+      - name: Run Tests
+        run: flutter test
+      - name: Build Flutter Web
+        run: flutter build web
+      - name: Web Deploy - GitHub Pages
+        working-directory: ./.github/workflow
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./app/build/web/
