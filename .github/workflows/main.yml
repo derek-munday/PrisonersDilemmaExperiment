@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/build_phase.yml
+      - uses: ./.github/actions/build-web
         with:
           app_dir: ./app
