@@ -8,6 +8,9 @@ jobs:
   Pipeline:
     name: Flutter CI/CD Pipeline
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
@@ -20,8 +23,7 @@ jobs:
       - name: Build Flutter Web
         run: flutter build web
       - name: Web Deploy - GitHub Pages
-        working-directory: ./.github/workflow
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./app/build/web/
+          publish_dir: ./build/web/
