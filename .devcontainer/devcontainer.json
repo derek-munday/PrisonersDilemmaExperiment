@@ -14,8 +14,7 @@
 			"ms-azuretools.vscode-docker",
 			"dart-code.flutter",
 			"dart-code.dart-code",
-			"flutterando.flutter-coverage",
-			"ryanluker.vscode-coverage-gutters"
+			"flutterando.flutter-coverage"
 		  ]
 		}
 	},
