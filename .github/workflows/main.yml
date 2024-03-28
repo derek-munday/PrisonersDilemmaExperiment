@@ -1,12 +1,15 @@
 name: Main Pipeline
 
 on:
-  push:
-    branches: [ "main" ]
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main
 
 jobs:
-  Pipeline:
-    name: Flutter CI/CD Pipeline
+  CI:
+    name: Flutter Continuous Integration
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -18,8 +21,24 @@ jobs:
           channel: 'stable'
       - name: Install App Dependencies
         run: flutter pub get
+
+      - name: Set up lcov
+        run: |
+          sudo apt-get update -qq -y
+          sudo apt-get install lcov -y
+
       - name: Run Tests
-        run: flutter test
+        run: flutter test --coverage
+      - name: Report code coverage
+        uses: zgosalvez/github-actions-report-lcov@v3
+        with:
+          coverage-files: coverage/lcov.info
+          minimum-coverage: 50
+          artifact-name: code-coverage-report
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          working-directory: ./app
+          update-comment: true
+          
       - name: Build Flutter Web
         run: flutter build web
       - name: Web Deploy - GitHub Pages
