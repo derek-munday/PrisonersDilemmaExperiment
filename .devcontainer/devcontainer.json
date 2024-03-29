@@ -4,6 +4,8 @@
 	"name": "Ubuntu",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	// If using Apple Silicone (tested on M1) use the below Dockerfile instead of the above image
+	//"dockerFile": "Dockerfile"
 	"features": {
 		"ghcr.io/jarrodcolburn/features/flutter-sdk:0": {}
 	},
