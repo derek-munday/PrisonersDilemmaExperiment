@@ -1,11 +1,10 @@
 name: Main Pipeline
 
 on:
+  push:
   pull_request:
     types:
       - opened
-    branches:
-      - main
 
 jobs:
   CI:
@@ -33,16 +32,3 @@ jobs:
         uses: fjlopezs/lcov-reporter-action@v1.0.0
         with:
           lcov-file: ./app/coverage/lcov.info
-      - name: Build Flutter Web
-        run: flutter build web
-      - name: Web Deploy - GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./app/build/web/
-      #- uses: FirebaseExtended/action-hosting-deploy@v0
-      #  with:
-      #    repoToken: "${{ secrets.GITHUB_TOKEN }}"
-      #    firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
-      #    expires: 30d
-      #    projectId: flutterdilemma
