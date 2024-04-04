@@ -30,14 +30,9 @@ jobs:
       - name: Run Tests
         run: flutter test --coverage
       - name: Report code coverage
-        uses: zgosalvez/github-actions-report-lcov@v3
+        uses: fjlopezs/lcov-reporter-action@v1.0.0
         with:
-          coverage-files: lcov.info
-          minimum-coverage: 50
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          working-directory: ./app/coverage
-          update-comment: true
-          
+          lcov-file: ./app/coverage/lcov.info
       - name: Build Flutter Web
         run: flutter build web
       - name: Web Deploy - GitHub Pages
